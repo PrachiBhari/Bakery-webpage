@@ -1,5 +1,5 @@
 import { GrInstagram } from "react-icons/gr";
-import { useCallback, useState } from 'react';
+import { useCallback, useState } from "react";
 
 import styles from "./Menu.module.css";
 import { Category } from "../Assets/bakery";
@@ -8,62 +8,72 @@ import LogoDalilo from "../Assets/LogoDalilo.svg";
 const menuList = [
   {
     menu: "Home",
-    category: ["all"]
+    category: ["all"],
   },
   {
-    menu: "Savory Breads",
-    category: ["salty"]
+    menu: "Breads",
+    category: ["bread"],
   },
   {
     menu: "Sweet Breads",
-    category: ["sweet"]
+    category: ["sweet"],
   },
   {
-    menu: "Delicious Dalilinhos",
-    category: ["tiny"]
+    menu: "Rolls",
+    category: ["rolls"],
   },
   {
-    menu: "Dalilo Vegan",
-    category: ["vegan"]
+    menu: "Cakes",
+    category: ["cakes"],
   },
   {
-    menu: "Dalilo Lactose-Free",
-    category: ["lacfree"]
+    menu: "Cookies",
+    category: ["cookie"],
   },
 ];
 
 export default function Menu({ categoryFilter }) {
-  const [menuActive, setMenuActive] = useState('Home');
+  const [menuActive, setMenuActive] = useState("Home");
 
-  const handleMenu = useCallback((event) => {
-    const menuNameSelected = String(event.target.innerHTML).replace('<br>', ' ');
-    if (menuNameSelected !== menuActive) {
-      setMenuActive(menuNameSelected);
-    }
-    const menuSelected = menuList.find(menu => menu.menu === menuNameSelected);
-    if (menuSelected) {
-      return categoryFilter(menuSelected.category);
-    }
-    return;
-  }, [menuActive, categoryFilter]);
+  const handleMenu = useCallback(
+    (event) => {
+      const menuNameSelected = String(event.target.innerHTML).replace(
+        "<br>",
+        " "
+      );
+      if (menuNameSelected !== menuActive) {
+        setMenuActive(menuNameSelected);
+      }
+      const menuSelected = menuList.find(
+        (menu) => menu.menu === menuNameSelected
+      );
+      if (menuSelected) {
+        return categoryFilter(menuSelected.category);
+      }
+      return;
+    },
+    [menuActive, categoryFilter]
+  );
 
   return (
     <aside className={styles.menuContainer}>
       <img src={LogoDalilo} alt="Dalilo Logo" />
       <nav>
         <ul>
-          {menuList.map(item => {
+          {menuList.map((item) => {
             const isMenuActive = item.menu === menuActive;
-            const itemToCheck = item.menu.split(' ');
+            const itemToCheck = item.menu.split(" ");
 
             if (itemToCheck.length > 1) {
               return (
                 <li
                   key={itemToCheck[0] + itemToCheck[1]}
-                  className={isMenuActive ? styles.active : ''}
+                  className={isMenuActive ? styles.active : ""}
                 >
                   <a onClick={handleMenu} tabIndex={1}>
-                    {itemToCheck[0]}<br />{itemToCheck[1]}
+                    {itemToCheck[0]}
+                    <br />
+                    {itemToCheck[1]}
                   </a>
                 </li>
               );
@@ -71,7 +81,7 @@ export default function Menu({ categoryFilter }) {
               return (
                 <li
                   key={itemToCheck[0]}
-                  className={isMenuActive ? styles.active : ''}
+                  className={isMenuActive ? styles.active : ""}
                 >
                   <a onClick={handleMenu} tabIndex={1}>
                     {itemToCheck[0]}
@@ -82,10 +92,6 @@ export default function Menu({ categoryFilter }) {
           })}
         </ul>
       </nav>
-      <a href="https://www.instagram.com/forninhodalilo/" target="_blank" rel="noopener noreferrer">
-        <GrInstagram size={30} />
-        <span>@littleovenofDalilo</span>
-      </a>
     </aside>
   );
 }

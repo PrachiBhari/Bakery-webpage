@@ -6,7 +6,7 @@ import Header from "../../Components/Header";
 import Menu from "../../Components/Menu";
 import ProductCard from "../../Components/ProductCard";
 import { GiSlicedBread } from "react-icons/gi";
-import styles from "./Home.module.css"; // Adjusted to .css
+import styles from "./Home.module.css"; 
 import { useCallback, useState } from "react";
 
 export function Home() {

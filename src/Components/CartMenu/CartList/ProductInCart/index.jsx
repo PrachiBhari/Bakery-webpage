@@ -6,11 +6,13 @@ import { useState } from "react";
 import ConfirmationModal from "./ConfirmationModal"; // Adjust path as necessary
 
 function ProductInCart({ productId, quantity, totalPrice, unityPrice }) {
-  const cartProduct = BakeryProducts.find(product => product.id === productId);
+  const cartProduct = BakeryProducts.find(
+    (product) => product.id === productId
+  );
   const {
     increaseProductQuantityByOne,
     decreaseProductQuantityByOne,
-    removeItemFromCart
+    removeItemFromCart,
   } = useCart();
 
   const [isModalOpen, setModalOpen] = useState(false);
@@ -46,10 +48,10 @@ function ProductInCart({ productId, quantity, totalPrice, unityPrice }) {
             <p>{cartProduct?.name}</p>
             <div>
               <span>
-                {unityPrice.toLocaleString('pt-BR', {
+                {unityPrice.toLocaleString("pt-BR", {
                   minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'INR'
+                  style: "currency",
+                  currency: "INR",
                 })}
               </span>
             </div>
@@ -57,17 +59,25 @@ function ProductInCart({ productId, quantity, totalPrice, unityPrice }) {
         </div>
 
         <div className={styles.productAmout}>
-          <AiOutlineMinus size={12} className={styles.icon} onClick={handleDecreaseQuantity} />
+          <AiOutlineMinus
+            size={12}
+            className={styles.icon}
+            onClick={handleDecreaseQuantity}
+          />
           <span>{quantity}</span>
-          <AiOutlinePlus size={12} className={styles.icon} onClick={handleIncreaseQuantity} />
+          <AiOutlinePlus
+            size={12}
+            className={styles.icon}
+            onClick={handleIncreaseQuantity}
+          />
         </div>
 
         <div className={styles.total}>
           <span>
-            {totalPrice.toLocaleString('pt-BR', {
+            {totalPrice.toLocaleString("pt-BR", {
               minimumFractionDigits: 2,
-              style: 'currency',
-              currency: 'INR'
+              style: "currency",
+              currency: "INR",
             })}
           </span>
         </div>
@@ -80,7 +90,7 @@ function ProductInCart({ productId, quantity, totalPrice, unityPrice }) {
       {/* Render the confirmation modal */}
       <ConfirmationModal
         isOpen={isModalOpen}
-        message="Deseja realmente remover o item do carrinho?"
+        message="Do you really want to remove the item from the cart?"
         onConfirm={handleConfirmRemove}
         onCancel={handleCancelRemove}
       />

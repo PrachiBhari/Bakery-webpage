@@ -15,7 +15,7 @@ function NotFound() {
 
               <div>
                 <h1>Forninho Dalilo</h1>
-                <p>The best Boutique of Artisan Breads in Brazil!</p>
+                <p>The best in locality</p>
               </div>
             </Link>
           </div>

@@ -5,7 +5,7 @@ const CartContext = createContext();
 
 const PRODUCT_MAX_QUANTITY = 6;
 
-export const FEES = 6.95; // in percentage
+export const FEES = 10; // in percentage
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);

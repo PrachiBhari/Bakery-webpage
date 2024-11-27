@@ -1,13 +1,13 @@
 import { useCart } from "../../hooks/useCart";
-import { AiFillShopping, AiFillCompass } from 'react-icons/ai';
+import { AiFillShopping, AiFillCompass } from "react-icons/ai";
 
 import LogoDalilo from "../../Assets/LogoDalilo.svg";
 import Komb from "../../Assets/komb.svg";
 import Mountains from "../../Assets/Mountains.svg";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
-import CartList from '../../Components/CartMenu/CartList';
-import AddressForm from "../../Components/CheckoutPage/AddressForm";
+import CartList from "../../Components/CartMenu/CartList";
+import PaymentForm from "../../Components/CheckoutPage/AddressForm";
 
 export function Checkout() {
   const { orderNumber } = useCart();
@@ -19,7 +19,7 @@ export function Checkout() {
       <header className={styles.checkoutHeader}>
         <div>
           <div>
-            <Link to={'/'}>
+            <Link to={"/"}>
               <img src={LogoDalilo} alt="" />
               <div>
                 <h1>Checkout</h1>
@@ -28,7 +28,7 @@ export function Checkout() {
             </Link>
           </div>
 
-          <Link to={'/'} className={styles.linkToHome}>
+          <Link to={"/"} className={styles.linkToHome}>
             Return to Shop
             <AiFillShopping size={24} />
           </Link>
@@ -36,7 +36,7 @@ export function Checkout() {
       </header>
 
       <div className={styles.formsContainer}>
-        <AddressForm />
+        <PaymentForm />
 
         <div className={styles.oderCard}>
           <header>

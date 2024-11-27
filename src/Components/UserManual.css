@@ -1,0 +1,37 @@
+.user-manual {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+  background-color: #fff8e1;
+  border: 1px solid #f5d7a5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manual-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #c56b3a;
+}
+
+.manual-steps {
+  font-size: 18px;
+  color: #5a4231;
+  line-height: 1.6;
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.manual-steps li {
+  margin-bottom: 10px;
+}
+
+.thank-you {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #5a4231;
+  font-weight: bold;
+}

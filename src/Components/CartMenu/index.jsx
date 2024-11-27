@@ -51,13 +51,13 @@ export default function CartMenu() {
             className={orderType === 'delivery' ? styles.orderTypeSelected : ''}
             onClick={() => handleOrderType('delivery')}
           >
-            delivery
+            Takeaway
           </span>
           <span
             className={orderType === 'togo' ? styles.orderTypeSelected : ''}
             onClick={() => handleOrderType('togo')}
           >
-            to go
+            Dine-in
           </span>
         </div>
 

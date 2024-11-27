@@ -11,22 +11,22 @@ export default function ProductCard({ product }) {
 
   let cardFooterMessage = (
     <>
-      <span>**</span><strong>Contains Meat and/or Lactose</strong><span>**</span>
+      <span>**</span><strong>bakery product </strong><span>**</span>
     </>
   );
 
-  if (product.categories.includes("vegan")) {
+  if (product.categories.includes("bread")) {
     cardFooterMessage = (
       <>
-        <span>**</span><strong>Vegan Product</strong><span>**</span>
+        <span>**</span><strong>pure veg</strong><span>**</span>
       </>
     );
   }
 
-  if (product.categories.includes("vegan") && product.categories.includes("lacfree")) {
+  if (product.categories.includes("cakes") && product.categories.includes("rolls")) {
     cardFooterMessage = (
       <>
-        <span>**</span><strong>Vegan and Lactose-Free Product</strong><span>**</span>
+        <span>**</span><strong>contains egg</strong><span>**</span>
       </>
     );
   }
