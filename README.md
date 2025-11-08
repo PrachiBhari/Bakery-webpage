@@ -28,6 +28,8 @@ Build & Deploy
 📬 Contact
 
 🎯 Features
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e361efd5-a444-45b7-8d40-f4aeb3437348" />
+
 
 This Bakery POS system includes:
 
